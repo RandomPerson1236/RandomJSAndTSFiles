@@ -1,5 +1,7 @@
 // jQuery must be within your project for this script to function.
 
+// How to use at bottom
+
 function f ( x, n ){
 
     let result = null;
@@ -46,3 +48,13 @@ function f ( x, n ){
     
 }
 export { f };
+
+/* How to use:
+    f(array, multiply);
+    
+    EXAMPLE: f([1,2,3], 2); = 2,4,6
+    
+    debug() will log the values in the console OR you can show them in an Element
+    (like a div for example) by doing debug(class, id, or tagname) and this will
+    create individual span elements for each value within the container using span elements.
+*/
