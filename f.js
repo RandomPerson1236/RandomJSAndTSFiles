@@ -56,5 +56,5 @@ export { f };
     
     debug() will log the values in the console OR you can show them in an Element
     (like a div for example) by doing debug(class, id, or tagname) and this will
-    create individual span elements for each value within the container using span elements.
+    create individual span elements for each value within the container.
 */
