@@ -1,5 +1,108 @@
 /* #ddd9dd - body,  #c2bac2 - body_second */
+:root{
+    --main-color-second: #c2bac2;
+}
 body{
     background-color: #ddd9dd;
     margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+nav{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+nav > *{
+    border: none;
+    background: none;
+    font-size: 1rem;
+    padding: 15px;
+    color: black;
+    text-decoration: none;
+    display: block;
+}
+nav > *:hover{
+    background-color: #00000009;
+    cursor: pointer;
+}
+main{
+    margin-top: 25px;
+}
+main > h1{
+    text-align: center;
+}
+.top-area{
+    width: 100vw;
+    border-bottom: solid 8px var(--main-color-second);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20vh;
+}
+.top-area > #search-area > input{
+    padding: 10px 30px;
+    width: 35vw;
+    border-radius: 30px 0px 0px 30px;
+    border: 2px var(--main-color-second) solid;
+}
+.top-area > #search-area > #finish-search{
+    padding: 10px 20px;
+    border: 2px var(--main-color-second) solid;
+    border-radius: 0px 30px 30px 0px;
+}
+.top-area > #search-area > #finish-search:hover{
+    cursor: pointer;
+}
+.top-area > #fp-logo{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.advertisement-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.advertisement-container > img{
+    box-shadow: 0 10px 10px hsla(0, 0%, 0%, 0.339);
+}
+.notif-window{
+    min-height: 45vh;
+    max-height: 45vh;
+    background-color: white;
+    box-shadow: 0 10px 10px hsla(0, 0%, 0%, 0.339);
+    position: absolute;
+    display: none;
+    justify-content:flex-start;
+    flex-direction: column;
+    overflow: hidden;
+    text-align: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+.notif-window > .notification-cNotImportant{
+    background-color:#c2bac263;
+    margin-top: 5px;
+    padding: 10px 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.notif-window > #to-top-notif{
+    position: absolute;
+    top: 100px;
+    left: 20px;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    padding: 10px 12px;
+    cursor: pointer;
+    border: none;
+    background-color: hsla(0, 0%, 100%, 0.5);
+}
+#break{
+    width: 100%;
+    border: 1px solid;
 }

@@ -4,19 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Flower Pot GC</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     
+    <div class="top-area">
+        <img id="fp-logo" draggable="false" src="images/flowerpo_logo.png" width="200">
+        <div id="search-area">
+            <input type="text" placeholder="Search...">
+            <button id="finish-search"><i class="fa fa-search"></i></button>
+        </div>
+    </div>
     <nav>
         <a href="javascript:void(0)">HOME</a>
         <a href="javascript:void(0)">STORE</a>
         <a href="javascript:void(0)">ABOUT US</a>
         <a href="javascript:void(0)">CONTACT</a>
+        <button id="notification-btn"><i class="fa fa-bell"></i></button>
     </nav>
 
-    <h1>Header</h1>
+    <div class="notif-window">
+        <h2 id="notif-counter">Notifications (null)</h1>
+            <div id="break"></div>
+            <span>Nothing at the moment.</span>
+            <button title="Back to top" id="to-top-notif"><i class="fa fa-arrow-up"></i></button>
+    </div>
+
+    <main>
+        <h1>Featured</h1>
+        <div class="advertisement-container">
+            <img id="advertisement-z" 
+            src="images/placeholder.jpg"
+            width="375">
+        </div>
+    </main>
 
     <script src="main.js"></script>
 </body>
