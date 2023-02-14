@@ -20,7 +20,7 @@ not_btn.addEventListener('click', () => {
 
     if (not_open) { 
         $window.style.display = 'flex'; 
-        $window.style.left = `calc(${getPosition(not_btn).x}px / 1.5)`;
+        $window.style.left = `calc(${getPosition(not_btn).x}px / 1.25)`;
     }
     else $window.style.display = 'none';
 });
@@ -37,6 +37,7 @@ function create_notification( content, img ){
 
     const del_btn = document.createElement('button');
     del_btn.innerHTML = '<i class="fa fa-trash" style="pointer-events: none;"></i>';
+    del_btn.title = 'Delete';
 
     del_btn.style.cssText = `margin: 5px; color: red; 
     font-size: 1rem; cursor: pointer; background: none; border: dashed 2px black;`;
@@ -45,6 +46,8 @@ function create_notification( content, img ){
         const mainImage = document.createElement('img');
         mainImage.src = fImg;
         mainImage.style.margin = '10px';
+        mainImage.width = 300; mainImage.style.borderRadius = '20px';
+        mainImage.style.boxShadow = '0 10px 10px hsla(0, 0%, 0%, 0.339)';
 
         el.append(mainImage);
     }
@@ -60,21 +63,20 @@ function create_notification( content, img ){
     $window.append(el);
 }
 
-window.onload = ()=>{
-    $window.children[2].style.display = 'none';
+let span_m = $window.querySelector('span');
 
-    create_notification(`
-    Welcome to the Flower Pot Garden Centre website!
-    We are here for you.
-    `, './images/placeholder.jpg'
-    );
-}
+span_m.style.display = 'none';
+
+create_notification(`
+Welcome to the Flower Pot Garden Centre website!
+We are here for you.
+`, './images/rose_img.jpg'
+);
+create_notification(`This is a random notification!`, 'images/placeholder.jpg');
 
 const to_top_b = document.getElementById('to-top-notif');
 
-to_top_b.addEventListener('click', ()=>{
-    $window.scrollTop = 0;
-});
+to_top_b.addEventListener('click', ()=>{ $window.scrollTop = 0 });
 
 function update(){
     requestAnimationFrame(update);
@@ -83,10 +85,10 @@ function update(){
     if ($window.scrollTop > 100) to_top_b.style.display = 'block';
     else to_top_b.style.display = 'none';
 
-    to_top_b.style.top = `calc(275px + ${$window.scrollTop}px)`;
+    to_top_b.style.top = `calc(80% + ${$window.scrollTop}px)`;
 
-    if (notifications.length <= 0) $window.children[2].style.display = 'block';
-        else if (notifications.length > 0) $window.children[2].style.display = 'none';
+    if (notifications.length <= 0) span_m.style.display = 'block';
+        else if (notifications.length > 0) span_m.style.display = 'none';
 
     if ($window.clientHeight < $window.scrollHeight) $window.style.width = '400px';
         else $window.style.width = '350px';
